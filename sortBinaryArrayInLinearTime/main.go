@@ -20,20 +20,15 @@ func sort(arr []int) {
 	end := len(arr) - 1
 
 	for start < end {
-
-		if arr[start] == 1 && arr[end] == 0 {
-			swap(&arr, start, end)
-			start++
-			end--
-			continue
-		} else if arr[start] == 1 {
-			end--
-		} else if arr[start] == 0 {
-			start++
-		} else {
-			start++
+		if arr[start] == 1 {
 			end--
 		}
+		if arr[start] == 0 {
+			start++
+		}
+		swap(&arr, start, end)
+		start++
+		end--
 	}
 
 	fmt.Println(arr)
